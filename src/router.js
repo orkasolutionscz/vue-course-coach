@@ -13,9 +13,9 @@ const router = createRouter({
     history: createWebHistory(),
     routes: [
         { path: '/', redirect: '/coaches' },
-        { path: '/coaches', component: CoachesList },
+        { path: '/coaches', component: CoachesList, name: 'coaches-list' },
         {
-            path: '/coaches/:id', component: CoachesDetail, children: [
+            path: '/coaches/:id', component: CoachesDetail, name:'coach-detail', children: [
                 { path: 'contact', component: ContactCoach } // /coaches/c1/contact
             ]
         },

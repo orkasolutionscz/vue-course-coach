@@ -3,7 +3,7 @@
     <nav>
       <h1><router-link to="/">Find a Coach</router-link></h1>
       <ul>
-        <li><router-link to="/coaches">All Coaches</router-link></li>
+        <li><router-link :to="{name: 'coaches-list'}">All Coaches</router-link></li>
         <li><router-link to="/requests">Requests</router-link></li>
       </ul>
     </nav>
@@ -17,7 +17,7 @@ export default {};
 <style scoped>
 header {
   width: 100%;
-  height: 3rem;
+  height: 5rem;
   background-color: #3d008d;
   display: flex;
   justify-content: center;
@@ -28,7 +28,7 @@ header a {
   text-decoration: none;
   color: #f391e3;
   display: inline-block;
-  padding: 0.2rem 1.5rem;
+  padding: 0.2rem 1rem;
   border: 1px solid transparent;
 }
 
