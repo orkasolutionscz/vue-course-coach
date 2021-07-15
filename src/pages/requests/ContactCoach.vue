@@ -19,24 +19,28 @@
 export default {
   data() {
     return {
-      email:'',
-      message:'',
+      email: '',
+      message: '',
       formIsValid: true,
     };
   },
   methods: {
     submitForm() {
       this.formIsValid = true;
-      
-      if (this.email === '' || !this.email.includes('@')) {
+      if (
+        this.email === '' ||
+        !this.email.includes('@') ||
+        this.message === ''
+      ) {
         this.formIsValid = false;
+        return;
       }
-      if (this.message === '') {
-        this.formIsValid = false;
-      }
-      if (!this.formIsValid) {
-          return;
-      }
+      this.$store.dispatch('requests/contactCoach', {
+        email: this.email,
+        message: this.message,
+        coachId: this.$route.params.id,
+      });
+      this.$router.replace('/coaches');
     },
   },
 };
