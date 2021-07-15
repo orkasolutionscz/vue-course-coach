@@ -1,5 +1,5 @@
 <template>
-    <div class="card">
+    <div class="cardbase">
         <slot>
 
         </slot>
@@ -13,7 +13,7 @@
 </script>
 
 <style scoped>
-.card {
+.cardbase {
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   padding: 1rem;
